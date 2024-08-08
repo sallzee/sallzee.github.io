@@ -12,30 +12,30 @@ header {
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 }
 
 .header-content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     width: 100%;
-    max-width: 800px;
-    margin-bottom: 10px;
 }
 
 .site-title {
     margin: 0;
     font-size: 2em;
     text-align: left;
+    flex: 1; /* Allow title to take remaining space */
 }
 
 .porsche-image {
     width: 150px; /* Adjust the size as needed */
     height: auto;
-    margin: 0 auto;
+    margin: 0 auto; /* Center image */
+    flex: 0 0 auto; /* Do not grow or shrink */
 }
+
 nav ul {
     display: flex;
     justify-content: center;
