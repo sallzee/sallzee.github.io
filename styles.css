@@ -36,7 +36,6 @@ header {
     height: auto;
     margin: 0 auto;
 }
-
 nav ul {
     display: flex;
     justify-content: center;
@@ -52,6 +51,12 @@ nav ul li a {
     text-decoration: none;
     color: #007aff;
     font-weight: bold;
+}
+
+.spotify-logo {
+    width: 25px; /* Adjust the size as needed */
+    height: auto;
+    vertical-align: middle; /* Aligns the logo with text */
 }
 
 main {
