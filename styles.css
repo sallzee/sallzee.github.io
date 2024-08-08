@@ -52,12 +52,6 @@ h1 {
     font-size: 2.5em;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #007aff;
-    font-weight: bold;
-}
-
 main {
     max-width: 800px;
     margin: 30px auto;
