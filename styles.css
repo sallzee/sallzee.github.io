@@ -71,3 +71,9 @@ footer {
     background-color: #fff;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
+.twitter-logo {
+    width: 40px; /* Adjust the size as needed */
+    height: auto;
+    margin-top: 10px;
+}
+
