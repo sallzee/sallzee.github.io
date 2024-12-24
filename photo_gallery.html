@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery - Sallzee's Personal Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Photo Gallery</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="philosophy.html">Philosophy</a></li>
+            <li><a href="gaming.html">Gaming</a></li>
+            <li><a href="books.html">Books</a></li>
+            <li><a href="photo_gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+</header>
+<main id="gallery">
+    <h2>Latest Photos</h2>
+    <div id="image-container">
+        <!-- Images will be dynamically loaded here -->
+    </div>
+</main>
+<footer>
+    <p>© 2024 Sallzee</p>
+</footer>
+
+<script>
+    const imageFolder = './images/';
+    const imageContainer = document.getElementById('image-container');
+
+    // Add filenames of images stored in the images/ folder
+    const imageFilenames = [
+        'image1.jpg',
+        'image2.jpg',
+        'image3.jpg' // Add more image filenames here
+    ];
+
+    imageFilenames.forEach(filename => {
+        const img = document.createElement('img');
+        img.src = `${imageFolder}${filename}`;
+        img.alt = filename;
+        img.style = 'max-width: 200px; margin: 10px;';
+        imageContainer.appendChild(img);
+    });
+</script>
+</body>
+</html>
