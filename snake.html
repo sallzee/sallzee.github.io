@@ -51,10 +51,12 @@
         function draw() {
             changingDirection = false;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
             ctx.fillStyle = "red";
             ctx.fillRect(food.x, food.y, box, box);
+            
             ctx.fillStyle = "green";
-            snake.forEach((segment) => {
+            snake.forEach((segment, index) => {
                 ctx.fillRect(segment.x, segment.y, box, box);
             });
             
@@ -76,18 +78,14 @@
             
             let newHead = { x: snakeX, y: snakeY };
             
-            if (newHead.x < 0 || newHead.x >= canvas.width || newHead.y < 0 || newHead.y >= canvas.height) {
+            if (
+                newHead.x < 0 || newHead.x >= canvas.width ||
+                newHead.y < 0 || newHead.y >= canvas.height ||
+                snake.some(segment => segment.x === newHead.x && segment.y === newHead.y)
+            ) {
                 clearInterval(game);
                 alert("Game Over");
                 return;
-            }
-            
-            for (let i = 1; i < snake.length; i++) {
-                if (newHead.x === snake[i].x && newHead.y === snake[i].y) {
-                    clearInterval(game);
-                    alert("Game Over");
-                    return;
-                }
             }
             
             snake.unshift(newHead);
