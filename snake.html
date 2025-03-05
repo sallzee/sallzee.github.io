@@ -74,11 +74,11 @@
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
             ctx.fillStyle = "red";
-            ctx.fillRect(food.x + 2, food.y + 2, box - 4, box - 4);
+            ctx.fillRect(food.x, food.y, box, box);
 
             ctx.fillStyle = "lime";
             snake.forEach(segment => {
-                ctx.fillRect(segment.x + 2, segment.y + 2, box - 4, box - 4);
+                ctx.fillRect(segment.x, segment.y, box, box);
             });
 
             let head = { x: snake[0].x, y: snake[0].y };
@@ -101,6 +101,7 @@
             ) {
                 alert("Game Over! Your score: " + score);
                 clearInterval(gameInterval);
+                return;
             }
 
             snake.unshift(head);
